@@ -11,7 +11,7 @@ from B3_classify_poses import classify_poses
 
 # Set Streamlit page title and icon
 st.set_page_config(
-    page_title="Pose Classifier",
+    page_title="Gesture Classifier",
     page_icon=":camera:",
 )
 
@@ -21,7 +21,7 @@ st.write("Instructions:")
 st.write("1. Upload an image or select a predefined image:")
 st.write("2. Click 'Save Image' to Save the uploaded image.")
 st.write("3. Click 'Classify Poses' Button to perform the classification")
-st.write("4. Click 'Display Images' to display the extracted images with their classified poses")
+st.write("4. Click 'Display Images' to display the extracted images with their classified gestures")
 
 # Define a function to calculate the perceptual hash of an image
 def calculate_hash(image):
@@ -61,13 +61,13 @@ if uploaded_image is not None:
         st.success("Processed image saved as 'img.jpg'")
 
 # Add a button to run the script
-if st.button("Classify poses"):
+if st.button("Classify gestures"):
     
     st.text("Detecting Persons...")
     detect_person()
     st.text("Detecting Keypoints for pose...")
     detect_keypoints()
-    st.text("Classifying the poses...")
+    st.text("Classifying the gestures...")
     classify_poses()
     st.text("All functions executed successfully. Click on Display Images to view the results")
 
