@@ -4,7 +4,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/rigvedrs/Red-Hen-Gesture-Classifier)
 
-The Gesture Classifier is a Python application that allows you to classify hand gestures in images. It uses computer vision techniques to detect persons in images, identify keypoints for pose estimation, and classify gestures based on the detected poses.
+The Gesture Classifier is a streamlit application that provides an easy interface to classify hand gestures in images. It makes use of the multimodal pipeline that includes computer vision models to detect persons in images, identify keypoints for pose estimation, and classify gestures based on the detected poses.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
