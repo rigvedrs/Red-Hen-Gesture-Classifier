@@ -19,7 +19,7 @@ st.title("Gesture Classifier 🚀")
 
 st.write("Instructions:")
 st.write("1. Upload an image or select a predefined image:")
-st.write("2. Click 'Save Image' to Save the uploaded image.")
+st.write("2. Click 'Save Image' to add the image in the pipeline")
 st.write("3. Click 'Classify Poses' Button to perform the classification")
 st.write("4. Click 'Display Images' to display the extracted images with their classified gestures")
 
@@ -29,7 +29,7 @@ def calculate_hash(image):
     return str(imagehash.average_hash(pil_image))
 
 # List of predefined test images in the "test_imgs" folder
-test_images = ['img_1.jpg', 'img_2.jpg', 'img_3.jpg', 'img_4.jpg', 'img_5.jpg', 'img_6.jpg', 'img_7.jpg', 'img_8.jpg']
+test_images = ['img_1.jpg', 'img_2.jpg', 'img_3.jpg', 'img_4.jpg', 'img_5.jpg', 'img_6.jpg']
 
 # Upload an image or select from predefined test images
 uploaded_image = st.file_uploader("Upload an image or select a predefined image:", type=["jpg", "jpeg", "png"])
