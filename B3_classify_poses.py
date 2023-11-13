@@ -149,8 +149,6 @@ def classify_poses(file_dir='data/image_data.pickle', output_dir='./data/'):
         #     display_image(img, d['pred'])
             
         elif d['palm'] == 'blessing':
-            
-            print(f' Detected {out}')
 
             if d['person'] == 'baby jesus':
                 out = d['pred'] = 'Baby Jesus using blessing Gesture'
