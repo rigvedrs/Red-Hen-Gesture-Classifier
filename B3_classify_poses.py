@@ -91,8 +91,9 @@ def classify_poses(file_dir='data/image_data.pickle', output_dir='./data/'):
         
     print('Loading palm detection model...')
 
+	
 
-
+	# Detecting the palm gestures using YOLO
     model = YOLO('model/palm.pt') 
 
     print('Detecting Gestures...')
@@ -103,6 +104,20 @@ def classify_poses(file_dir='data/image_data.pickle', output_dir='./data/'):
         
         if out[0].boxes.cls.size()[0]:
             image_dicts[i]['palm'] = out[0].names[int(out[0].boxes.cls[0].cpu())]
+			
+			
+			
+	# Classifying the persons using the YOLO classifying model		
+    model = YOLO('model/person_classifier.pt') 
+
+    print('Detecting persons...')
+
+    for i, image_dict in enumerate(image_dicts):
+        image = image_dict['image']
+        out = model(image)
+
+        if out[0].probs:
+            image_dicts[i]['person'] = out[0].names[out[0].probs.top1]
             
             
   
@@ -140,9 +155,10 @@ def classify_poses(file_dir='data/image_data.pickle', output_dir='./data/'):
             if d['person'] == 'baby jesus':
                 out = d['pred'] = 'Baby Jesus using blessing Gesture'
             elif d['person'] == 'baby jesus mary':
-                print('Mary is holding Baby Jesus who is using the blessing gesture')
+                out = d['pred'] = 'Mary is holding Baby Jesus who is using the blessing gesture'
             else:
                 out = d['pred'] = 'Blessing Gesture'
+            print(f' Detected {out}')
             display_image(img, d['pred'])
             
         else:
