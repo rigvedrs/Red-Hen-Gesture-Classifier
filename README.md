@@ -6,6 +6,10 @@
 
 The Gesture Classifier is a streamlit application that provides an easy interface to classify hand gestures in images. It makes use of the multimodal pipeline that includes computer vision models to detect persons in images, identify keypoints for pose estimation, and classify gestures based on the detected poses.
 
+
+https://github.com/rigvedrs/Red-Hen-Gesture-Classifier/assets/73471201/6dd17f37-e71d-43ac-87de-a57db9c7ebe1
+
+
 ## Table of Contents
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
